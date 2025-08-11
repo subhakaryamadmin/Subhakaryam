@@ -1,0 +1,440 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Noto Serif Telugu', serif;
+  background-color: #fde7d0;
+  color: #4a2e18;
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #7a1111;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #8b0000;
+}
+
+
+
+/* Hero Section */
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Audio control styling */
+.audio-control {
+  margin-top: 20px;
+}
+
+.audio-control button {
+  background: #ffde59;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #4a2e18;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.audio-control button:hover {
+  background: #ffc107;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+  .mantra {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+  .hero-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+.hero-section {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('temple-background.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 140px 20px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.mantra {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: #ffde59;
+  font-family: 'Noto Serif Telugu', serif;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: #8b0000;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #a60000;
+}
+
+
+/* Section titles */
+.section-title {
+  font-size: 2.4rem;
+  color: #602419;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  background-color: #fff8f0;
+  padding: 4rem 1rem;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  color: #602419;
+  margin-bottom: 0.5rem;
+}
+
+.about-text h2 span {
+  color: #a53a1d;
+}
+
+.about-text h3 {
+  font-size: 1.2rem;
+  color: #3b3b3b;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+
+/* Pooja grid */
+/* Section Wrapper */
+.pooja-section {
+  background-color: #fefaf5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pooja-header h2 {
+  font-size: 2.5rem;
+  color: #7a1111;
+  margin-bottom: 0.5rem;
+}
+
+.pooja-header p {
+  color: #444;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Grid Layout */
+.pooja-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Card */
+.pooja-card {
+  position: relative;
+  background: linear-gradient(to top, #1a1a1a, #ccc);
+  border-radius: 8px;
+  color: white;
+  overflow: hidden;
+  min-height: 200px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.pooja-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Title */
+.pooja-card h3 {
+  z-index: 2;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Overlay Hover Info */
+.pooja-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.9);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  padding: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.pooja-card:hover .pooja-overlay {
+  opacity: 1;
+}
+
+/* Booking Section */
+.booking-section {
+  padding: 4rem 1rem;
+  background-color: #fffefc;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #702a1b;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.booking-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.qr-code img {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  border: 2px solid #eee;
+}
+
+.booking-info {
+  flex: 1;
+  text-align: left;
+  max-width: 400px;
+}
+
+.booking-info h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+.booking-info p {
+  margin: 1rem 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.8rem 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1eb858;
+}
+
+.whatsapp-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form input, form select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #602419;
+  border-radius: 4px;
+}
+form button {
+  padding: 0.7rem;
+  background-color: #602419;
+  color: gold;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 2.5rem 0;
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.contact-info {
+  flex: 1 1 300px;
+  color: #4a2e18;
+}
+
+/* Footer */
+.footer {
+  background-color: #602419;
+  color: #fbe8c8;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Floating WhatsApp Icon */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+}
+.whatsapp-float img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
