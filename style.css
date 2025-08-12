@@ -103,11 +103,12 @@ body {
   }
 }
 
-
 .hero-section {
+  /* Background image + dark overlay for text readability */
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('temple-background.jpg') center/cover no-repeat;
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('temple-background.png') center/cover no-repeat;
+
   color: #fff;
   text-align: center;
   padding: 140px 20px 100px;
@@ -115,7 +116,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-}
+  min-height: 100vh; /* Makes hero full screen */
 }
 
 .hero-content {
@@ -128,6 +129,7 @@ body {
   color: #ffde59;
   font-family: 'Noto Serif Telugu', serif;
   margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* better visibility */
 }
 
 .hero-subtitle {
@@ -144,11 +146,20 @@ body {
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
 }
 
 .hero-btn:hover {
   background-color: #a60000;
 }
+
+@media (max-width: 600px) {
+  .mantra {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+}
+
 
 
 /* Section titles */
