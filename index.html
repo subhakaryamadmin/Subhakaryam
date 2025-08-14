@@ -13,19 +13,20 @@
     <div class="logo">Subhakaryam</div>
     <nav>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#poojas">Poojas</a></li>
-        <li><a href="#booking">Booking</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+  <li><a href="#about" class="nav-btn">About</a></li>
+  <li><a href="#poojas" class="nav-btn">Poojas</a></li>
+  <li><a href="#booking" class="nav-btn">Booking</a></li>
+  <li><a href="#contact" class="nav-btn">Contact Us</a></li>
+</ul>
+
     </nav>
   </div>
 </header>
 
 
 <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero-section">
-  
   <div class="hero-content fade-in">
     <h1 class="mantra">
       సర్వమంగళ మాంగల్యే, శివే సర్వార్థ సాధికే,<br />
@@ -36,13 +37,12 @@
       traditional poojas to invoke divine blessings, peace, and prosperity for you and your family.
     </p>
     <a href="#poojas" class="hero-btn">Discover Our Poojas</a>
-     <!-- Background Music Controls -->
-    <div class="audio-control">
-      <button id="play-audio">🔊 Play Chant</button>
-      <audio id="chant-audio" src="chant.mp3" loop></audio>
-    </div>
   </div>
+
+  <!-- Hidden chant audio for autoplay -->
+  <audio id="chant-audio" src="chant.mp3" autoplay loop></audio>
 </section>
+
 
 
 <!-- ABOUT SECTION (immediately below) -->
@@ -75,102 +75,104 @@
 
 
 <!-- types of pooja SECTION (immediately below) -->
-<section id="poojas" class="pooja-section">
+<section id="poojas" class="pooja-section pooja-grid-adapted">
   <div class="pooja-header">
     <h2>Our Pooja Services</h2>
     <p>We offer a wide range of poojas conducted with devotion and adherence to Vedic traditions.</p>
   </div>
 
-  <div class="pooja-grid">
-
+  <div class="poojas-grid">
+    <!-- First row -->
     <div class="pooja-card">
-      <div class="pooja-overlay">
-        <p>Invokes Lord Vishnu’s blessings for prosperity and happiness in the household.</p>
-      </div>
-      <h3>Satyanarayana Swamy Vratam</h3>
+      <img src="ganapathi_homam.png" alt="Ganapathi Homam " />
+      <h3>Ganapathi Homam</h3>
     </div>
-
     <div class="pooja-card">
-      <div class="pooja-overlay">
-        <p>Performed before entering a new house to purify the space and invite positive energies.</p>
-      </div>
-      <h3>Griha Pravesham</h3>
+      <img src="Gruha-Pravesham.png" alt="Gruha Pravesham" />
+      <h3>Gruha Pravesham</h3>
     </div>
-
     <div class="pooja-card">
-      <div class="pooja-overlay">
-        <p>Reenactment of divine marriage of Lord Srinivasa and Padmavati for blessings in marriage.</p>
-      </div>
-      <h3>Srinivasa Kalyanam</h3>
+      <img src="Devatha-Kalyanams.png" alt="Kalyanams: Shiva, Vishnu, Lord Rama, Lord Srinivasa, and Goda kalyana’s" />
+      <h3>Kalyanams: Shiva, Vishnu, Lord Rama, Lord Srinivasa, and Goda kalyana’s</h3>
     </div>
-
     <div class="pooja-card">
-      <div class="pooja-overlay">
-        <p>Dedicated to weapons and tools, seeking divine protection and success in work.</p>
-      </div>
-      <h3>Ayudha Pooja</h3>
+      <img src="Marriage.png" alt="Marriage" />
+      <h3>Marriage</h3>
     </div>
-
+    <!-- Second row -->
     <div class="pooja-card">
-      <div class="pooja-overlay">
-        <p>Worships Goddess Saraswati for wisdom, learning, and academic success.</p>
-      </div>
-      <h3>Saraswati Pooja</h3>
+      <img src="Satyanarayana-Vratam.png" alt="Satyanarayana Vratam" />
+      <h3>Satyanarayana Vratam</h3>
     </div>
-
     <div class="pooja-card">
-      <div class="pooja-overlay">
-        <p>Seeks wealth, prosperity, and financial well-being through the blessings of Lakshmi and Kubera.</p>
-      </div>
-      <h3>Lakshmi Kubera Pooja</h3>
+      <img src="Rudrabhishekam.png" alt="Rudrabhishekam" />
+      <h3>Rudrabhishekam</h3>
+    </div>
+    <div class="pooja-card">
+      <img src="Homams.png" alt="Kuja, Rahu, Shani, Rudra, Pashupata Homams" />
+      <h3>Kuja, Rahu, Shani, Rudra, Pashupata Homams</h3>
+    </div>
+    <div class="pooja-card">
+      <img src="Chandi-Homam.png" alt="Chandi Homam" />
+      <h3>Chandi Homam</h3>
     </div>
 
   </div>
 </section>
 
 
+
 <!-- booking SECTION (immediately below) -->
-
-  <section id="booking" class="booking-section">
+<section id="booking" class="booking-section split-layout">
   <h2 class="section-title">Book Your Pooja</h2>
-  <p class="section-subtitle">
-    Connect with us on WhatsApp for a seamless booking experience.
-    Scan the QR code or click the button below.
-  </p>
+  <div class="booking-split-container">
 
-  <div class="booking-card">
-    <div class="qr-code">
-      <img src="assets/qr-code.png" alt="WhatsApp QR Code" />
+    <!-- Left side: Booking via Bot -->
+    <div class="booking-bot">
+      <h3>Booking via Bot</h3>
+      <p>Chat with our intelligent booking assistant to schedule your pooja easily and quickly.</p>
+      <a href="https://taupe-sable-8ea6cf.netlify.app/" target="_blank" class="bot-btn">Start Booking</a>
     </div>
-    <div class="booking-info">
-      <h3>Booking via WhatsApp</h3>
-      <p>
-        Our team is ready to assist you in scheduling the perfect pooja for your needs.
-        Simply send us a message to get started.
-      </p>
-      <a href="https://wa.me/919999999999?text=I%20want%20to%20book%20a%20pooja" target="_blank" class="whatsapp-btn">
-        <img src="assets/whatsapp-icon.png" alt="WhatsApp" />
-        Book on WhatsApp
-      </a>
+
+    <!-- Right side: WhatsApp contact -->
+    <div class="booking-whatsapp">
+      <h3>For any other queries</h3>
+      <p>Reach out to us on WhatsApp and our team will assist you promptly.</p>
+      
+      <!-- WhatsApp QR code -->
+      <div class="whatsapp-qr-code">
+        <img src="whatsapp-qr-code.png" alt="WhatsApp QR Code" />
+      </div>
     </div>
   </div>
 </section>
 
 
 <!-- contact us SECTION (immediately below) -->
-  <section id="contact" class="contact-section container">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="contact-container">
-      <div class="contact-info">
-        <p><strong>Phone:</strong> +91 99999‑99999</p>
-        <p><strong>Email:</strong> bookings@subhakaryam.in</p>
-        <p><strong>Address:</strong> Temple Street, Hyderabad, Telangana</p>
-      </div>
-      <div class="contact-map">
-        <iframe src="https://via.placeholder.com/400x250.png?text=Map" width="100%" height="250" style="border:0;"></iframe>
-      </div>
+<section id="contact" class="contact-section container">
+  <h2 class="section-title">Contact Us</h2>
+  <p class="contact-intro">
+    We’d love to hear from you! Whether you have questions, feedback, or need assistance, reach out to us using any of the methods below, and our team will respond promptly.
+  </p>
+
+  <div class="contact-content">
+    <!-- Left column: Contact Info -->
+    <div class="contact-info-box">
+      <h3>Get in Touch</h3>
+      <p><strong>Phone:</strong> +91 8008433752</p>
+      <p><strong>Email:</strong> admin@subhakaryam.in</p>
+      <p><strong>Address:</strong> Hyderabad, Telangana</p>
+      <p><strong>Working Hours:</strong> Mon - Sat, 9 AM - 6 PM</p>
     </div>
-  </section>
+
+    <!-- Right column: Map -->
+    <div class="contact-map">
+      <iframe src="https://via.placeholder.com/400x250.png?text=Map" width="100%" height="100%" style="border:0;" aria-label="Map to Subhakaryam"></iframe>
+    </div>
+  </div>
+</section>
+
+
 
   <footer class="footer">
     <p>&copy; 2025 Subhakaryam. All rights reserved.</p>
@@ -200,22 +202,27 @@
   </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("chant-audio");
-    const playBtn = document.getElementById("play-audio");
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("chant-audio");
+  audio.volume = 1.0; // Full volume
+  audio.autoplay = true;
 
-    playBtn.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play();
-        playBtn.textContent = "⏸ Pause Chant";
-      } else {
-        audio.pause();
-        playBtn.textContent = "🔊 Play Chant";
-      }
-    });
+  // Try to autoplay immediately
+  audio.play().catch(() => {
+    console.warn("Autoplay blocked — waiting for user interaction...");
+    // As soon as user clicks/taps anywhere, play the chant
+    const startChant = () => {
+      audio.play().then(() => {
+        console.log("Chant started after interaction");
+        document.removeEventListener("click", startChant);
+        document.removeEventListener("touchstart", startChant);
+      });
+    };
+    document.addEventListener("click", startChant);
+    document.addEventListener("touchstart", startChant);
   });
+});
 </script>
 
 </body>
 </html>
-
