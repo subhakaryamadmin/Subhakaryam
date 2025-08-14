@@ -1,4 +1,4 @@
-/* Base styles */
+/* ---------- Base Styles ---------- */
 body {
   margin: 0;
   font-family: 'Noto Serif Telugu', serif;
@@ -8,151 +8,82 @@ body {
 }
 .container {
   width: 90%;
-  max-width: 960px;
+  max-width: 1200px;
   margin: auto;
 }
 
-/* Navbar */
+/* ---------- Navbar ---------- */
 .navbar {
   background-color: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-
 .navbar-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0.8rem 1rem;
 }
-
 .logo {
   font-size: 1.5rem;
   color: #7a1111;
   font-weight: bold;
 }
-
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
 .nav-btn {
-  display: inline-block;
   padding: 0.5rem 1.2rem;
-  background: transparent;
   border: 2px solid #7a1111;
   border-radius: 25px;
+  background: transparent;
+  color: #7a1111;
+  text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  text-decoration: none;
-  color: #7a1111;
   transition: all 0.3s ease;
 }
-
 .nav-btn:hover,
-.nav-btn:focus {
-  background: #7a1111;
-  color: #fff;
-  outline: none;
-}
-
 .nav-btn.active {
   background: #a53a1d;
-  border-color: #732313;
   color: #fff;
+  border-color: #a53a1d;
 }
 
-
-/* Navbar on small devices */
-@media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-
-/* Hero Section */
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.5s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* Mobile Responsive Adjustments */
-
-/* Hero section - better spacing & text size */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 100px 15px 60px;
-    min-height: auto;
-  }
-  .mantra {
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-  .hero-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-}
+/* ---------- Hero Section ---------- */
 .hero-section {
-  /* Background image + dark overlay for text readability */
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
     url('temple-background.png') center/cover no-repeat;
-
   color: #fff;
   text-align: center;
-  padding: 140px 20px 100px;
+  padding: 100px 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-  min-height: 100vh; /* Makes hero full screen */
+  justify-content: center;
 }
-
 .hero-content {
   max-width: 800px;
 }
-
 .mantra {
   font-size: 2rem;
   line-height: 1.6;
   color: #ffde59;
-  font-family: 'Noto Serif Telugu', serif;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* better visibility */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
-
 .hero-subtitle {
   font-size: 1.1rem;
-  color: #e0e0e0;
   margin-bottom: 2rem;
 }
-
 .hero-btn {
   background-color: #8b0000;
   color: white;
@@ -160,102 +91,54 @@ body {
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
 }
-
 .hero-btn:hover {
   background-color: #a60000;
 }
 
-@media (max-width: 600px) {
-  .mantra {
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-}
-
-
-
-/* Section titles */
-.section-title {
-  font-size: 2.4rem;
-  color: #602419;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* ABOUT SECTION */
+/* ---------- About Section ---------- */
 .about-section {
   background-color: #fff8f0;
   padding: 4rem 1rem;
 }
-
 .about-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
   gap: 2rem;
 }
-
 .about-image {
   flex: 1 1 400px;
   text-align: center;
 }
-
 .about-image img {
   width: 100%;
   max-width: 450px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
-
 .about-text {
   flex: 1 1 500px;
 }
-
 .about-text h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #602419;
-  margin-bottom: 0.5rem;
 }
-
 .about-text h2 span {
   color: #a53a1d;
 }
-
 .about-text h3 {
   font-size: 1.2rem;
-  color: #3b3b3b;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 500;
 }
-
 .about-text p {
   font-size: 1.05rem;
-  line-height: 1.8;
-  color: #333;
   margin-bottom: 1rem;
 }
 
-/* About section mobile stack */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about-image,
-  .about-text {
-    max-width: 100%;
-  }
-  .about-image img {
-    max-width: 80%;
-  }
-}
-/* -------------------- Section titles -------------------- */
+/* ---------- Section Title ---------- */
 .section-title {
   font-size: 2.4rem;
   color: #602419;
@@ -263,239 +146,117 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* -------------------- Pooja Services -------------------- */
+/* ---------- Pooja Services ---------- */
 .pooja-grid-adapted {
   background: linear-gradient(180deg, #fcf5ed 84%, #efe8dc 100%);
-  padding: 4rem 0 2.5rem 0;
+  padding: 4rem 1rem;
   text-align: center;
 }
-
 .poojas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }
-
 .pooja-card {
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 5px 16px rgba(112,76,34,0.08),
-              0 0 0 8px #ede5ce1a;
+  box-shadow: 0 5px 16px rgba(112,76,34,0.08);
   overflow: hidden;
-  text-align: center;
-  padding: 0;
-  transition: transform 0.18s;
-  position: relative;
+  transition: transform 0.2s;
 }
-
 .pooja-card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 20px 20px 0 0;
-  transition: filter 0.3s;
 }
-
-.pooja-card:hover {
-  transform: translateY(-8px) scale(1.02);
-}
-
-.pooja-card:hover img {
-  filter: brightness(0.97) blur(1px);
-}
-
 .pooja-card h3 {
-  margin: 0;
-  font-size: 1.22rem;
-  letter-spacing: 1px;
+  padding: 1rem;
+  font-size: 1.1rem;
   color: #602419;
-  background: #fff;
-  padding: 1rem 0.2rem 1.3rem;
-  font-weight: bold;
-  border-radius: 0 0 20px 20px;
+}
+.pooja-card:hover {
+  transform: translateY(-5px) scale(1.02);
 }
 
-/* Pooja grid tighter on mobile */
-@media (max-width: 768px) {
-  .poojas-grid {
-    gap: 1rem;
-  }
-  .pooja-card img {
-    height: 160px;
-  }
-  .pooja-card h3 {
-    font-size: 1rem;
-    padding: 0.8rem 0.5rem;
-  }
-}
-
-
-/* -------------------- Booking Section -------------------- */
+/* ---------- Booking Section ---------- */
 .booking-section.split-layout {
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
   background-color: #fffefc;
   text-align: center;
 }
-
 .booking-split-container {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-  max-width: 900px;
-  margin: 0 auto;
   flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  margin: auto;
 }
-
 .booking-bot,
 .booking-whatsapp {
   flex: 1 1 320px;
   background: #fdf6e3;
   border-radius: 16px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 8px 25px rgba(112, 76, 34, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(112,76,34,0.15);
 }
-
-.booking-bot h3,
-.booking-whatsapp h3 {
-  color: #7a1111;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.booking-bot p,
-.booking-whatsapp p {
-  color: #5a4221;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  max-width: 320px;
-}
-
 .bot-btn {
   background-color: #8b0000;
   color: #fff;
-  padding: 0.85rem 2rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0px 5px 15px rgba(139,0,0,0.4);
-  transition: background-color 0.3s ease;
 }
-
 .bot-btn:hover {
   background-color: #a60000;
 }
-
-.booking-whatsapp .whatsapp-qr-code {
-  margin-bottom: 1.5rem;
+.whatsapp-qr-code {
+  margin-top: 1.5rem;
   width: 180px;
-  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.booking-whatsapp .whatsapp-qr-code img {
+.whatsapp-qr-code img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* Booking and Contact split - stack vertically */
-@media (max-width: 768px) {
-  .booking-split-container,
-  .contact-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .booking-bot,
-  .booking-whatsapp,
-  .contact-info-box,
-  .contact-map {
-    width: 100%;
-    max-width: 500px;
-  }
-}
-/* -------------------- Contact Section -------------------- */
+/* ---------- Contact Section ---------- */
 .contact-section {
-  padding: 3.5rem 2rem 4rem;
-  background: linear-gradient(180deg, #fcf5ed 84%, #efe8dc 100%);
-  color: #4a2e18;
-  max-width: 960px;
-  margin: auto;
+  padding: 4rem 1rem;
+  background-color: #fffefc; /* Matches Booking section */
   text-align: center;
 }
-
-
-.contact-intro {
-  font-size: 1.15rem;
-  color: #5a4221;
-  margin-bottom: 2rem;
-}
-
 .contact-content {
   display: flex;
-  gap: 2.5rem;
-  justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
 }
-
 .contact-info-box {
   flex: 1 1 350px;
   background: #faf9f5;
-  border: 1px solid #ece6d9;
+  padding: 2rem;
   border-radius: 12px;
-  padding: 2rem 2.5rem;
-  box-shadow: 0 8px 20px rgba(180, 146, 99, 0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   text-align: left;
-  max-width: 400px;
 }
-
 .contact-info-box h3 {
-  font-size: 1.75rem;
-  color: #7a1111;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  font-weight: bold;
+  color: #7a1111;
 }
-
-.contact-info-box p {
-  font-size: 1.05rem;
-  margin: 0.6rem 0;
-  line-height: 1.6;
-  color: #533312;
-}
-
 .contact-map {
   flex: 1 1 350px;
-  max-width: 500px;
-  height: 250px;
-  border-radius: 18px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 26px rgba(180, 146, 99, 0.11);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 850px) {
-  .contact-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contact-info-box,
-  .contact-map {
-    max-width: 100%;
-    height: auto;
-  }
-  .contact-map iframe {
-    height: 250px;
-  }
-}
-
-/* -------------------- Footer -------------------- */
+/* ---------- Footer ---------- */
 .footer {
   background-color: #602419;
   color: #fbe8c8;
@@ -504,16 +265,59 @@ body {
   font-size: 0.9rem;
 }
 
-/* -------------------- Floating WhatsApp Icon -------------------- */
+/* ---------- Floating WhatsApp ---------- */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 60px;
 }
-
 .whatsapp-float img {
   width: 100%;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ---------- Responsive Media Queries ---------- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 15px;
+  }
+  .mantra {
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pooja-card img {
+    height: 160px;
+  }
+  .booking-split-container,
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-info-box {
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .mantra {
+    font-size: 1.2rem;
+  }
+  .hero-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  .nav-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .pooja-card img {
+    height: 120px;
+  }
 }
