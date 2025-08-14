@@ -68,17 +68,18 @@ body {
   color: #fff;
 }
 
-@media (max-width: 600px) {
-  .nav-links {
-    gap: 0.5rem;
+
+/* Navbar on small devices */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 0.8rem;
   }
-  .nav-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
-
-
 
 
 /* Hero Section */
@@ -98,17 +99,25 @@ body {
 
 
 /* Mobile Responsive Adjustments */
-@media (max-width: 600px) {
+
+/* Hero section - better spacing & text size */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 100px 15px 60px;
+    min-height: auto;
+  }
   .mantra {
     font-size: 1.4rem;
     line-height: 1.4;
   }
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
   .hero-btn {
-    padding: 0.6rem 1.2rem;
+    padding: 0.6rem 1rem;
     font-size: 0.9rem;
   }
 }
-
 .hero-section {
   /* Background image + dark overlay for text readability */
   background: 
@@ -232,7 +241,20 @@ body {
   margin-bottom: 1rem;
 }
 
-
+/* About section mobile stack */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image,
+  .about-text {
+    max-width: 100%;
+  }
+  .about-image img {
+    max-width: 80%;
+  }
+}
 /* -------------------- Section titles -------------------- */
 .section-title {
   font-size: 2.4rem;
@@ -295,15 +317,20 @@ body {
   border-radius: 0 0 20px 20px;
 }
 
-@media (max-width: 800px) {
-  .poojas-grid { gap: 1.2rem; }
-  .pooja-card img { height: 140px; }
+/* Pooja grid tighter on mobile */
+@media (max-width: 768px) {
+  .poojas-grid {
+    gap: 1rem;
+  }
+  .pooja-card img {
+    height: 160px;
+  }
+  .pooja-card h3 {
+    font-size: 1rem;
+    padding: 0.8rem 0.5rem;
+  }
 }
 
-@media (max-width: 500px) {
-  .pooja-card h3 { font-size: 1rem; padding: 0.7rem 0.1rem; }
-  .pooja-card img { height: 86px; }
-}
 
 /* -------------------- Booking Section -------------------- */
 .booking-section.split-layout {
@@ -378,13 +405,22 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Booking and Contact split - stack vertically */
 @media (max-width: 768px) {
-  .booking-split-container {
+  .booking-split-container,
+  .contact-content {
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .booking-bot,
+  .booking-whatsapp,
+  .contact-info-box,
+  .contact-map {
+    width: 100%;
+    max-width: 500px;
   }
 }
-
 /* -------------------- Contact Section -------------------- */
 .contact-section {
   padding: 3.5rem 2rem 4rem;
