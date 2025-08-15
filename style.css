@@ -1,323 +1,60 @@
-/* ---------- Base Styles ---------- */
-body {
-  margin: 0;
-  font-family: 'Noto Serif Telugu', serif;
-  background-color: #fde7d0;
-  color: #4a2e18;
-  line-height: 1.6;
-}
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ---------- Navbar ---------- */
-.navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.navbar-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 1rem;
-}
-.logo {
-  font-size: 1.5rem;
-  color: #7a1111;
-  font-weight: bold;
-}
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.nav-btn {
-  padding: 0.5rem 1.2rem;
-  border: 2px solid #7a1111;
-  border-radius: 25px;
-  background: transparent;
-  color: #7a1111;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-.nav-btn:hover,
-.nav-btn.active {
-  background: #a53a1d;
-  color: #fff;
-  border-color: #a53a1d;
-}
-
-/* ---------- Hero Section ---------- */
-.hero-section {
-  background: 
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('temple-background.png') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-content {
-  max-width: 800px;
-}
-.mantra {
-  font-size: 2rem;
-  line-height: 1.6;
-  color: #ffde59;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-.hero-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-.hero-btn {
-  background-color: #8b0000;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-.hero-btn:hover {
-  background-color: #a60000;
-}
-
-/* ---------- About Section ---------- */
-.about-section {
-  background-color: #fff8f0;
-  padding: 4rem 1rem;
-}
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-}
-.about-image {
-  flex: 1 1 400px;
-  text-align: center;
-}
-.about-image img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-.about-text {
-  flex: 1 1 500px;
-}
-.about-text h2 {
-  font-size: 2rem;
-  color: #602419;
-}
-.about-text h2 span {
-  color: #a53a1d;
-}
-.about-text h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-.about-text p {
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
-}
-
-/* ---------- Section Title ---------- */
-.section-title {
-  font-size: 2.4rem;
-  color: #602419;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* ---------- Pooja Services ---------- */
-.pooja-grid-adapted {
-  background: linear-gradient(180deg, #fcf5ed 84%, #efe8dc 100%);
-  padding: 4rem 1rem;
-  text-align: center;
-}
-.poojas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: auto;
-}
-.pooja-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 5px 16px rgba(112,76,34,0.08);
-  overflow: hidden;
-  transition: transform 0.2s;
-}
-.pooja-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.pooja-card h3 {
-  padding: 1rem;
-  font-size: 1.1rem;
-  color: #602419;
-}
-.pooja-card:hover {
-  transform: translateY(-5px) scale(1.02);
-}
-
-/* ---------- Booking Section ---------- */
-.booking-section.split-layout {
-  padding: 4rem 1rem;
-  background-color: #fffefc;
-  text-align: center;
-}
-.booking-split-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-.booking-bot,
-.booking-whatsapp {
-  flex: 1 1 320px;
-  background: #fdf6e3;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 8px 25px rgba(112,76,34,0.15);
-}
-.bot-btn {
-  background-color: #8b0000;
-  color: #fff;
-  padding: 0.8rem 1.6rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-}
-.bot-btn:hover {
-  background-color: #a60000;
-}
-.whatsapp-qr-code {
-  margin-top: 1.5rem;
-  width: 180px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.whatsapp-qr-code img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* ---------- Contact Section ---------- */
-.contact-section {
-  padding: 4rem 1rem;
-  background-color: #fffefc; /* Matches Booking section */
-  text-align: center;
-}
-.contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.contact-info-box {
-  flex: 1 1 350px;
-  background: #faf9f5;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  text-align: left;
-}
-.contact-info-box h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #7a1111;
-}
-.contact-map {
-  flex: 1 1 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* ---------- Footer ---------- */
-.footer {
-  background-color: #602419;
-  color: #fbe8c8;
-  text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.9rem;
-}
-
-/* ---------- Floating WhatsApp ---------- */
-.whatsapp-float {
+/* Preloader Styles */
+#preloader {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-}
-.whatsapp-float img {
+  top: 0;
+  left: 0;
   width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  height: 100%;
+  background-color: #fde7d0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.75s ease;
+}
+#preloader.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+.preloader-om {
+  font-size: 4rem;
+  color: #8c1515;
+  animation: pulse 2s infinite ease-in-out;
+}
+.preloader-text {
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: 2rem;
+    color: #602419;
+    margin-top: 1rem;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+/* Styles for scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#hero-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+#hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* ---------- Responsive Media Queries ---------- */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 80px 15px;
-  }
-  .mantra {
-    font-size: 1.5rem;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .pooja-card img {
-    height: 160px;
-  }
-  .booking-split-container,
-  .contact-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .contact-info-box {
-    text-align: center;
-  }
-}
-@media (max-width: 500px) {
-  .mantra {
-    font-size: 1.2rem;
-  }
-  .hero-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-  .nav-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-  .pooja-card img {
-    height: 120px;
-  }
+/* Active Navigation Link Style */
+.nav-link.nav-active {
+  background-color: #8c1515; /* primary color */
+  color: white;
+  font-weight: 700;
 }
