@@ -97,36 +97,46 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("chant-audio");
   const toggleBtn = document.getElementById("mantra-toggle");
   const toggleIcon = document.getElementById("mantra-toggle-icon");
 
-  let mantraStarted = false;  // Track if audio has started
+  let mantraStarted = false;
+  let mantraMuted = false;
 
-  // Prevent initial playback
   audio.muted = false;
   audio.pause();
 
-  // Button toggles mantra OFF
+  // Button toggles ON/OFF
   toggleBtn.addEventListener("click", function(e) {
     e.stopPropagation();
-    if (!audio.paused) {
-      audio.pause();
-      toggleIcon.textContent = "🔇";
-      mantraStarted = false; // Mark it stopped until next user click
-    }
-  });
-
-  // Any click that's not the button itself plays mantra (if not already playing)
-  function handlePlay(e) {
-    if (e.target !== toggleBtn && e.target !== toggleIcon && audio.paused) {
+    if (!mantraStarted || mantraMuted) {
+      // Turn ON
       audio.muted = false;
       audio.volume = 1.0;
       audio.play().then(() => {
         toggleIcon.textContent = "🔊";
         mantraStarted = true;
+        mantraMuted = false;
+      }).catch(() => {});
+    } else {
+      // Turn OFF
+      audio.pause();
+      toggleIcon.textContent = "🔇";
+      mantraMuted = true;
+    }
+  });
+
+  // Any click that's not the button itself turns ON (if not already playing)
+  function handlePlay(e) {
+    if (e.target !== toggleBtn && e.target !== toggleIcon && (!mantraStarted || mantraMuted)) {
+      audio.muted = false;
+      audio.volume = 1.0;
+      audio.play().then(() => {
+        toggleIcon.textContent = "🔊";
+        mantraStarted = true;
+        mantraMuted = false;
       }).catch(() => {});
     }
   }
@@ -134,6 +144,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", handlePlay);
   document.body.addEventListener("touchstart", handlePlay);
 
-  // Ensure icon is correct at start
   toggleIcon.textContent = "🔊";
 });
