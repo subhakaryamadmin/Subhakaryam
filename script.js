@@ -102,46 +102,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("chant-audio");
   const toggleBtn = document.getElementById("mantra-toggle");
   const toggleIcon = document.getElementById("mantra-toggle-icon");
-  let isPlaying = false;
 
-  // Initially, prevent autoplay until a user click on the body (handled below)
+  let mantraStarted = false;  // Track if audio has started
+
+  // Prevent initial playback
   audio.muted = false;
   audio.pause();
 
-  function playMantra() {
-    audio.muted = false;
-    audio.volume = 1.0;
-    audio.play().then(() => {
-      isPlaying = true;
-      toggleIcon.textContent = "🔊"; // Sound On
-    }).catch(() => {});
-  }
-
-  function stopMantra() {
-    audio.pause();
-    isPlaying = false;
-    toggleIcon.textContent = "🔇"; // Sound Off
-  }
-
-  // Toggle button to stop mantra
-  toggleBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevents body click event
-    stopMantra();
-  });
-
-  // Any click anywhere on the body (except the button) starts/resumes mantra
-  document.body.addEventListener("click", (e) => {
-    if(e.target !== toggleBtn && e.target !== toggleIcon && !isPlaying) {
-      playMantra();
-    }
-  });
-  document.body.addEventListener("touchstart", (e) => {
-    if(e.target !== toggleBtn && e.target !== toggleIcon && !isPlaying) {
-      playMantra();
+  // Button toggles mantra ON/OFF
+  toggleBtn.addEventListener("click", function(e) {
+    e.stopPropagation();
+    if (!audio.paused) {
+      audio.pause();
+      toggleIcon.textContent = "🔇";
+      mantraStarted = false; // Mark it stopped until next user click
     }
   });
 
-  // Icon starts as sound on (but not playing until user interacts)
+  // Any click that's not the button itself plays mantra (if not already playing)
+  function handlePlay(e) {
+    if (e.target !== toggleBtn && e.target !== toggleIcon && audio.paused) {
+      audio.muted = false;
+      audio.volume = 1.0;
+      audio.play().then(() => {
+        toggleIcon.textContent = "🔊";
+        mantraStarted = true;
+      }).catch(() => {});
+    }
+  }
+
+  document.body.addEventListener("click", handlePlay);
+  document.body.addEventListener("touchstart", handlePlay);
+
+  // Ensure icon is correct at start
   toggleIcon.textContent = "🔊";
 });
 
