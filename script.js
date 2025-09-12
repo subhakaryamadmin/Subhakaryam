@@ -100,21 +100,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("chant-audio");
-  audio.volume = 1.0; // Full volume
-  audio.autoplay = true;
+  const toggleBtn = document.getElementById("mantra-toggle");
+  const toggleIcon = document.getElementById("mantra-toggle-icon");
+  let isPlaying = false;
 
-  // Try to autoplay immediately
-  audio.play().catch(() => {
-    console.warn("Autoplay blocked — waiting for user interaction...");
-    // As soon as user clicks/taps anywhere, play the chant
-    const startChant = () => {
-      audio.play().then(() => {
-        console.log("Chant started after interaction");
-        document.removeEventListener("click", startChant);
-        document.removeEventListener("touchstart", startChant);
-      });
-    };
-    document.addEventListener("click", startChant);
-    document.addEventListener("touchstart", startChant);
+  // Initially, prevent autoplay until a user click on the body (handled below)
+  audio.muted = false;
+  audio.pause();
+
+  function playMantra() {
+    audio.muted = false;
+    audio.volume = 1.0;
+    audio.play().then(() => {
+      isPlaying = true;
+      toggleIcon.textContent = "🔊"; // Sound On
+    }).catch(() => {});
+  }
+
+  function stopMantra() {
+    audio.pause();
+    isPlaying = false;
+    toggleIcon.textContent = "🔇"; // Sound Off
+  }
+
+  // Toggle button to stop mantra
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevents body click event
+    stopMantra();
   });
+
+  // Any click anywhere on the body (except the button) starts/resumes mantra
+  document.body.addEventListener("click", (e) => {
+    if(e.target !== toggleBtn && e.target !== toggleIcon && !isPlaying) {
+      playMantra();
+    }
+  });
+  document.body.addEventListener("touchstart", (e) => {
+    if(e.target !== toggleBtn && e.target !== toggleIcon && !isPlaying) {
+      playMantra();
+    }
+  });
+
+  // Icon starts as sound on (but not playing until user interacts)
+  toggleIcon.textContent = "🔊";
 });
+
+
