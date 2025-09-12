@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.muted = false;
   audio.pause();
 
-  // Button toggles mantra ON/OFF
+  // Button toggles mantra OFF
   toggleBtn.addEventListener("click", function(e) {
     e.stopPropagation();
     if (!audio.paused) {
@@ -137,5 +137,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ensure icon is correct at start
   toggleIcon.textContent = "🔊";
 });
-
-
